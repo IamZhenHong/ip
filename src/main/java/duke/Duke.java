@@ -5,22 +5,35 @@ import java.util.Scanner;
 import duke.Command.Command;
 
 import duke.Task.Task;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 
 /**
  * The Duke class represents a task management application.
  * It allows users to add, delete, and mark tasks as done.
  */
-public class Duke {
+public class Duke extends Application{
     private TaskList taskList;
 
     /**
      * Constructs a Duke object.
      * Loads tasks from file and initializes the task list.
      */
-    Duke() {
+    public Duke() {
         ArrayList<Task> tasks = Storage.loadTasksFromFile();
         taskList = new TaskList(tasks);
+    }
+
+    @Override
+    public void start(Stage stage) {
+        Label helloWorldLabel = new Label("Hello World!");
+        Scene scene = new Scene(helloWorldLabel);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     /**
