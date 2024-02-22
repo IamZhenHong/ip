@@ -30,6 +30,12 @@ public class DeadlineTask extends Task {
         return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + deadline.format(DateTimeFormatter.ofPattern("HHmm"));
     }
 
+    @Override
+    public String getDescription() {
+        return description + " (by: " + deadline + ")";
+    }
+    
+
     /**
      * Converts the DeadlineTask object to a string representation for displaying to the user.
      *

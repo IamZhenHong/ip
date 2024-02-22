@@ -44,6 +44,10 @@ public class Task {
         return description;
     }
 
+    public void setDescription(String description) throws IllegalArgumentException {
+        this.description = description;
+    }
+
     /**
      * Returns a string representation of the task.
      *
